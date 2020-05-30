@@ -46,4 +46,11 @@ object NetworkModule {
             .build()
     }
 
+    @JvmStatic
+    @Provides
+    @Reusable
+    fun providesFairWeatherService(retrofit: Retrofit): FairWeatherService {
+        return retrofit.create(FairWeatherService::class.java)
+    }
+
 }
