@@ -16,6 +16,5 @@ data class OneCallForecast(
     val minuteWeather: List<MinuteWeather>,
 
     @Json(name = "daily")
-
     val dailyWeather: List<DailyWeather>
 )

@@ -10,10 +10,10 @@ data class CurrentWeather(
 
     val sunset: Int,
 
-    val temp: Temperature,
+    val temp: Double,
 
     @Json(name = "feels_like")
-    val feelsLike: Temperature,
+    val feelsLike: Double,
 
     val pressure: Int,
 
@@ -35,7 +35,7 @@ data class CurrentWeather(
 
     val weather: List<Weather>,
 
-    val rain: Double,
+    val rain: Rain?,
 
-    val snow: Double
+    val snow: Snow?
 )
