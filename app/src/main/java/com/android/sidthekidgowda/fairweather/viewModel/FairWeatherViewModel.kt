@@ -26,21 +26,11 @@ class FairWeatherViewModel @Inject constructor(
     fun getOneCallWeather(lat: Double, long: Double, apiKey: String) {
         viewModelScope.launch {
             try {
-                val weatherResponse = makeWeatherCall(lat, long, apiKey)
-                if (weatherResponse.isSuccessful) {
-                    //handle success
-                    _oneCallForeCastLiveData.value = weatherResponse.body()!!
-                } else {
-                    //handle failure
-                    oneCallForeCastFailure.value = true
-                }
+                val weatherResponse = fairWeatherService.getOneCallForecastForLatLong(lat, long, apiKey)
+                _oneCallForeCastLiveData.value = weatherResponse
             } catch (e: Exception) {
                 oneCallForeCastFailure.value = true
             }
         }
-    }
-
-    suspend fun makeWeatherCall(lat: Double, long: Double, apiKey: String) = withContext(Dispatchers.IO) {
-        fairWeatherService.getOneCallForecastForLatLong(lat, long, apiKey)
     }
 }

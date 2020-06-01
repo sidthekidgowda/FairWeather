@@ -13,8 +13,9 @@ data class OneCallForecast(
     val currentWeather: CurrentWeather,
 
     @Json(name = "minutely")
-    val minuteWeather: List<MinuteWeather>,
+    val minuteWeather: List<MinuteWeather>
 
-    @Json(name = "daily")
-    val dailyWeather: List<DailyWeather>
+    //fix daily weather
+//    @Json(name = "daily")
+//    val dailyWeather: List<DailyWeather>
 )

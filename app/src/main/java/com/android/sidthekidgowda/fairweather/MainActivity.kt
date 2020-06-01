@@ -24,6 +24,7 @@ class MainActivity : DaggerAppCompatActivity() {
 
         start_service_call.setOnClickListener {
             start_service_call.isEnabled = false
+            service_call_done.visibility = View.GONE
             progress.visibility = View.VISIBLE
 
             //39.961178 - lat
@@ -35,11 +36,17 @@ class MainActivity : DaggerAppCompatActivity() {
         weatherViewModel.oneCallForeCastLiveData.observe(this, Observer {
             Log.d("MAIN ACTIVITY CALL","SUCCESS CALL")
             progress.visibility = View.GONE
+            service_call_done.visibility = View.VISIBLE
+            service_call_done.text = "SUCCESS WEATHER CALL"
+            start_service_call.isEnabled = true
         })
 
         weatherViewModel.oneCallForeCastFailure.observe(this, Observer {
             Log.d("MAIN ACTIVITY CALL","FAILURE CALL")
             progress.visibility = View.GONE
+            service_call_done.visibility = View.VISIBLE
+            service_call_done.text = "FAILURE WEATHER CALL"
+            start_service_call.isEnabled = true
         })
 
     }

@@ -14,6 +14,6 @@ interface FairWeatherService {
     @GET("onecall")
     suspend fun getOneCallForecastForLatLong(@Query("lat") latitude: Double,
                                       @Query("lon") longitude: Double,
-                                      @Query("appid") apiKey: String): Response<OneCallForecast>
+                                      @Query("appid") apiKey: String): OneCallForecast
 
 }
