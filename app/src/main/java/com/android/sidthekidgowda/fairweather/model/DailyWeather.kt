@@ -30,9 +30,9 @@ data class DailyWeather(
     @Json(name = "clouds")
     val cloudiness: Int,
 
-    val rain: Double,
+    val rain: Double?,
 
-    val snow: Double,
+    val snow: Double?,
 
     @Json(name = "uvi")
     val uvIndex: Double
