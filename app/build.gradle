@@ -11,7 +11,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.android.sidthekidgowda.fairweather"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -69,6 +69,13 @@ dependencies {
 
     //RxViewModel
     implementation 'com.github.sidthekidgowda:rxviewmodelutility:1.1'
+
+    //RxJava3
+    implementation "io.reactivex.rxjava3:rxjava:3.0.6"
+    implementation "io.reactivex.rxjava3:rxandroid:3.0.0"
+
+    //material design
+    implementation 'com.google.android.material:material:1.2.1'
 
     //moshi
     implementation "com.squareup.moshi:moshi:$moshi"

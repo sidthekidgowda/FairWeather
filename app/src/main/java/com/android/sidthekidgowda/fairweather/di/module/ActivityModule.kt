@@ -1,7 +1,6 @@
 package com.android.sidthekidgowda.fairweather.di.module
 
-import com.android.sidthekidgowda.fairweather.MainActivity
-import dagger.Binds
+import com.android.sidthekidgowda.fairweather.view.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

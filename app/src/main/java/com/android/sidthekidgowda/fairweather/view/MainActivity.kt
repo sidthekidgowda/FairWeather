@@ -1,11 +1,12 @@
-package com.android.sidthekidgowda.fairweather
+package com.android.sidthekidgowda.fairweather.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.android.sidthekidgowda.fairweather.BuildConfig
+import com.android.sidthekidgowda.fairweather.R
 import com.android.sidthekidgowda.fairweather.viewModel.FairWeatherViewModel
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
