@@ -22,7 +22,8 @@ android {
 
     buildTypes {
         debug{
-            buildConfigField("String", "WEATHER_API", "\"" + localProperties['apiKey'] + "\"")
+            buildConfigField("String", "WEATHER_API", "\"" + localProperties['weatherAPI'] + "\"")
+            buildConfigField("String", "PLACES_API", "\"" + localProperties['placesAPI'] + "\"")
         }
         release {
             minifyEnabled false
