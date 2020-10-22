@@ -1,6 +1,6 @@
 package com.android.sidthekidgowda.fairweather.di.module
 
-import com.android.sidthekidgowda.fairweather.network.FairWeatherService
+import com.android.sidthekidgowda.fairweather.network.WeatherService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -40,7 +40,7 @@ object NetworkModule {
     @Reusable
     fun providesRetrofitService(okHttpClient: OkHttpClient, moshi: Moshi): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(FairWeatherService.BASE_URL)
+            .baseUrl(WeatherService.BASE_URL)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .client(okHttpClient)
             .build()
@@ -49,8 +49,8 @@ object NetworkModule {
     @JvmStatic
     @Provides
     @Reusable
-    fun providesFairWeatherService(retrofit: Retrofit): FairWeatherService {
-        return retrofit.create(FairWeatherService::class.java)
+    fun providesFairWeatherService(retrofit: Retrofit): WeatherService {
+        return retrofit.create(WeatherService::class.java)
     }
 
 }

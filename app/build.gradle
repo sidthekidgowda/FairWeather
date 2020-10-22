@@ -30,9 +30,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
 
@@ -74,6 +79,15 @@ dependencies {
     //RxJava3
     implementation "io.reactivex.rxjava3:rxjava:3.0.6"
     implementation "io.reactivex.rxjava3:rxandroid:3.0.0"
+
+    //places
+    implementation 'com.google.android.libraries.places:places:2.4.0'
+
+    //RxBinding
+    implementation 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
+    implementation 'com.jakewharton.rxbinding4:rxbinding-material:4.0.0'
+
+    implementation "androidx.fragment:fragment-ktx:1.2.5"
 
     //material design
     implementation 'com.google.android.material:material:1.2.1'

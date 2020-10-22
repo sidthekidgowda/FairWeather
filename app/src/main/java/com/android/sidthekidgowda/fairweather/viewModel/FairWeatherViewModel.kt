@@ -5,15 +5,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.android.sidthekidgowda.fairweather.model.OneCallForecast
-import com.android.sidthekidgowda.fairweather.network.FairWeatherService
-import kotlinx.coroutines.Dispatchers
+import com.android.sidthekidgowda.fairweather.network.WeatherService
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import java.lang.Exception
 import javax.inject.Inject
 
 class FairWeatherViewModel @Inject constructor(
-    val fairWeatherService: FairWeatherService
+    val fairWeatherService: WeatherService
 ) : ViewModel() {
 
 
