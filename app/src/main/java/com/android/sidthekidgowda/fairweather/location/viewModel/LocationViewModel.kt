@@ -1,4 +1,4 @@
-package com.android.sidthekidgowda.fairweather.viewModel
+package com.android.sidthekidgowda.fairweather.location.viewModel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -22,14 +22,12 @@ class LocationViewModel : ViewModel() {
 
     private val compositeDispoable = CompositeDisposable()
 
-    fun searchCities(query: String, placesClient: PlacesClient) {
+    fun searchCities(query: String, token: AutocompleteSessionToken, placesClient: PlacesClient) {
         Log.d("ViewModel", query)
 
-        val token = AutocompleteSessionToken.newInstance()
         val request = findAutocompletePredictionsRequest {
             this.query = query
-            typeFilter = TypeFilter.REGIONS
-            countries = listOf("US")
+            typeFilter = TypeFilter.CITIES
         }
 
         compositeDispoable.add(

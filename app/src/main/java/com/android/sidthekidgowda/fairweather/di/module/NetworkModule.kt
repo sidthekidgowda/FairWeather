@@ -1,6 +1,6 @@
 package com.android.sidthekidgowda.fairweather.di.module
 
-import com.android.sidthekidgowda.fairweather.network.WeatherService
+import com.android.sidthekidgowda.fairweather.weather.network.WeatherService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -17,15 +17,11 @@ object NetworkModule {
     @JvmStatic
     @Provides
     @Reusable
-    fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
-        return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-    }
-
-    @JvmStatic
-    @Provides
-    @Reusable
-    fun providesOKHttpClient(loggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
-        return OkHttpClient.Builder().addNetworkInterceptor(loggingInterceptor).build()
+    fun providesOKHttpClient(): OkHttpClient {
+        return OkHttpClient.Builder()
+            .addNetworkInterceptor(HttpLoggingInterceptor()
+                .setLevel(HttpLoggingInterceptor.Level.BODY))
+            .build()
     }
 
     @JvmStatic

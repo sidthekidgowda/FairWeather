@@ -1,6 +1,6 @@
-package com.android.sidthekidgowda.fairweather.network
+package com.android.sidthekidgowda.fairweather.weather.network
 
-import com.android.sidthekidgowda.fairweather.model.OneCallForecast
+import com.android.sidthekidgowda.fairweather.weather.model.OneCallForecast
 import retrofit2.http.GET
 import retrofit2.http.Query
 

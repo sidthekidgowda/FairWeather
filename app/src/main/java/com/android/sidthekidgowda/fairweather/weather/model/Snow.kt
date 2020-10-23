@@ -1,4 +1,4 @@
-package com.android.sidthekidgowda.fairweather.model
+package com.android.sidthekidgowda.fairweather.weather.model
 
 import com.squareup.moshi.Json
 

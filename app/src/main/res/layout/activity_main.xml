@@ -25,6 +25,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:name="com.android.sidthekidgowda.fairweather.view.LocationSearchFragment"/>
+        android:name="com.android.sidthekidgowda.fairweather.location.view.LocationSearchFragment"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

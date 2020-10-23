@@ -1,11 +1,11 @@
-package com.android.sidthekidgowda.fairweather.viewModel
+package com.android.sidthekidgowda.fairweather.weather.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.android.sidthekidgowda.fairweather.model.OneCallForecast
-import com.android.sidthekidgowda.fairweather.network.WeatherService
+import com.android.sidthekidgowda.fairweather.weather.model.OneCallForecast
+import com.android.sidthekidgowda.fairweather.weather.network.WeatherService
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

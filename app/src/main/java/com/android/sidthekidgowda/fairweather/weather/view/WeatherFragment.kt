@@ -1,19 +1,16 @@
-package com.android.sidthekidgowda.fairweather.view
+package com.android.sidthekidgowda.fairweather.weather.view
 
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.android.rxviewmodelutility.ViewModelFactory
 import com.android.sidthekidgowda.fairweather.BuildConfig
 import com.android.sidthekidgowda.fairweather.R
-import com.android.sidthekidgowda.fairweather.viewModel.FairWeatherViewModel
+import com.android.sidthekidgowda.fairweather.weather.viewModel.FairWeatherViewModel
 import dagger.android.support.DaggerFragment
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.weather_fragment.*
 import javax.inject.Inject
 

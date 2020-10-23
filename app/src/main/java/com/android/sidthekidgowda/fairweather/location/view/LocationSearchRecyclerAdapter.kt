@@ -1,4 +1,4 @@
-package com.android.sidthekidgowda.fairweather.view
+package com.android.sidthekidgowda.fairweather.location.view
 
 import android.view.LayoutInflater
 import android.view.View
@@ -35,11 +35,8 @@ class LocationSearchRecyclerAdapter(private val searchResults: MutableList<Autoc
         private val textView = view.findViewById(R.id.search_result_text) as TextView
 
         fun bind(result: AutocompletePrediction) {
-            textView.text = result.getPrimaryText(null)
+            textView.text = result.getFullText(null)
         }
-
-
-
     }
 
 }

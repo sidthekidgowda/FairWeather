@@ -1,8 +1,8 @@
-package com.android.sidthekidgowda.fairweather.model
+package com.android.sidthekidgowda.fairweather.weather.model
 
 import com.squareup.moshi.Json
 
-data class DailyWeather(
+data class CurrentWeather(
     @Json(name = "dt")
     val time: Int,
 
@@ -10,14 +10,22 @@ data class DailyWeather(
 
     val sunset: Int,
 
-    val temp: Temperature,
+    val temp: Double,
 
     @Json(name = "feels_like")
-    val feelsLike: Temperature,
+    val feelsLike: Double,
 
     val pressure: Int,
 
     val humidity: Int,
+
+    @Json(name = "uvi")
+    val uvIndex: Double,
+
+    @Json(name = "clouds")
+    val cloudiness: Int,
+
+    val visibility: Int,
 
     @Json(name = "wind_speed")
     val windSpeed: Double,
@@ -27,13 +35,7 @@ data class DailyWeather(
 
     val weather: List<Weather>,
 
-    @Json(name = "clouds")
-    val cloudiness: Int,
+    val rain: Rain?,
 
-    val rain: Double?,
-
-    val snow: Double?,
-
-    @Json(name = "uvi")
-    val uvIndex: Double
+    val snow: Snow?
 )
