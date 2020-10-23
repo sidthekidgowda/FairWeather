@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/locationSearchFragment">
+
+
+    <fragment
+        android:id="@+id/locationSearchFragment"
+        android:name="com.android.sidthekidgowda.fairweather.location.view.LocationSearchFragment"
+        android:label="LocationSearchFragment" >
+        <action
+            android:id="@+id/action_locationSearchFragment_to_weatherFragment"
+            app:destination="@id/weatherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="com.android.sidthekidgowda.fairweather.weather.view.WeatherFragment"
+        android:label="WeatherFragment" >
+        <argument
+            android:name="placeId"
+            app:argType="string" />
+        <argument
+            android:name="place"
+            app:argType="string" />
+    </fragment>
+</navigation>

@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.android.sidthekidgowda.fairweather.R
 import com.google.android.libraries.places.api.model.AutocompletePrediction
@@ -35,7 +36,12 @@ class LocationSearchRecyclerAdapter(private val searchResults: MutableList<Autoc
         private val textView = view.findViewById(R.id.search_result_text) as TextView
 
         fun bind(result: AutocompletePrediction) {
+            //pass place id
             textView.text = result.getFullText(null)
+
+            textView.setOnClickListener {
+                it.findNavController().navigate(LocationSearchFragmentDirections.actionLocationSearchFragmentToWeatherFragment(result.placeId, result.getFullText(null).toString()))
+            }
         }
     }
 

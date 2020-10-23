@@ -17,14 +17,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <fragment
-        android:id="@+id/location_search"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:name="com.android.sidthekidgowda.fairweather.location.view.LocationSearchFragment"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/navigation"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
