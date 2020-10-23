@@ -1,52 +1,42 @@
-package com.android.sidthekidgowda.fairweather.di.module
+package com.android.sidthekidgowda.fairweather.main.di
 
-import com.android.sidthekidgowda.fairweather.weather.network.WeatherService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
-import dagger.Reusable
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import javax.inject.Singleton
 
 @Module
+@InstallIn(ApplicationComponent::class)
 object NetworkModule {
 
-    @JvmStatic
     @Provides
-    @Reusable
+    @Singleton
     fun providesOKHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
-            .addNetworkInterceptor(HttpLoggingInterceptor()
-                .setLevel(HttpLoggingInterceptor.Level.BODY))
+            .addNetworkInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
             .build()
     }
 
-    @JvmStatic
     @Provides
-    @Reusable
+    @Singleton
     fun providesMoshi(): Moshi {
         return Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
     }
 
-    @JvmStatic
     @Provides
-    @Reusable
+    @Singleton
     fun providesRetrofitService(okHttpClient: OkHttpClient, moshi: Moshi): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(WeatherService.BASE_URL)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .client(okHttpClient)
             .build()
-    }
-
-    @JvmStatic
-    @Provides
-    @Reusable
-    fun providesFairWeatherService(retrofit: Retrofit): WeatherService {
-        return retrofit.create(WeatherService::class.java)
     }
 
 }

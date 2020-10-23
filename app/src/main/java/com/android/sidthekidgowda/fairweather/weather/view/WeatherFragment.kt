@@ -4,17 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.android.sidthekidgowda.fairweather.R
-import com.android.sidthekidgowda.fairweather.weather.viewModel.FairWeatherViewModel
-import dagger.android.support.DaggerFragment
-import javax.inject.Inject
+import com.android.sidthekidgowda.fairweather.weather.viewModel.WeatherViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-class WeatherFragment : DaggerFragment() {
-    @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
+@AndroidEntryPoint
+class WeatherFragment : Fragment() {
 
-    val args: WeatherFragmentArgs by navArgs()
+    private val args: WeatherFragmentArgs by navArgs()
+    private val weatherViewModel: WeatherViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,7 +27,6 @@ class WeatherFragment : DaggerFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val weatherViewModel = ViewModelProvider(this, viewModelFactory).get(FairWeatherViewModel::class.java)
 
         val placeId = args.placeId
         val place = args.place

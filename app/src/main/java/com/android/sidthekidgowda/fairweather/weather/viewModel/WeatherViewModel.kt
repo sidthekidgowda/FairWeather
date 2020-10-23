@@ -1,18 +1,19 @@
 package com.android.sidthekidgowda.fairweather.weather.viewModel
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.android.sidthekidgowda.fairweather.weather.model.OneCallForecast
 import com.android.sidthekidgowda.fairweather.weather.network.WeatherService
+import com.google.android.libraries.places.api.net.PlacesClient
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-class FairWeatherViewModel @Inject constructor(
-    val fairWeatherService: WeatherService
+class WeatherViewModel @ViewModelInject constructor(
+    private val fairWeatherService: WeatherService,
+    private val placesClient: PlacesClient
 ) : ViewModel() {
-
 
     private val _oneCallForeCastLiveData = MutableLiveData<OneCallForecast>()
     val oneCallForeCastLiveData: LiveData<OneCallForecast>
